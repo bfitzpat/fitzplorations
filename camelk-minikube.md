@@ -36,3 +36,18 @@ You can fix this locally to get past it. Download the file, make the fix, and th
 * <https://kubernetes.io/docs/reference/kubectl/cheatsheet/>
 * <https://kubernetes.io/docs/tasks/access-application-cluster/list-all-running-container-images/>
 * <https://kubernetes.io/docs/tasks/tools/install-minikube/>
+
+## Notes
+
+* Getting a development environment setup locally seems to be the trickiest part, but once it's up and running it's pretty easy to run a Camel configuration and watch the log.
+* Sanity note: Minikube is very slow on Windows, but much easier to work with on a linux (Fedora 30 in my case) box.
+
+## Changes
+
+* Initial version of this file added [8-MAY-2019]
+
+## Next steps
+
+* Work with the Kubernetes view in VS Code to see if we can start/stop the camelk cluster and access the Camel log.
+* See if there's an easy way to add a right-click "Run on Camel-K" command in the Explorer on supported file types (java, Groovy, xml, etc.).
+* Work through installing Camel-k on minishift and see if we can use the VS Code OpenShift tools and work through a similar workflow.
