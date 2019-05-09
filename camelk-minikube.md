@@ -115,9 +115,8 @@ Command string: kamel run --dev "c:\test\my.groovy"
 
 * Initial version of this file added [8-MAY-2019]
 * Added images for VS Code components aiding in certain steps (Kubernetes) [9-MAY-2019]
+* Added images for possible VS Code extension that provides 'run' menu for certain file types [9-MAY-2019]
 
 ## Next steps
 
-* Work with the Kubernetes view in VS Code to see if we can start/stop the camelk cluster and access the Camel log.
-* See if there's an easy way to add a right-click "Run on Camel-K" command in the Explorer on supported file types (java, Groovy, xml, etc.).
 * Work through installing Camel-k on minishift and see if we can use the VS Code OpenShift tools and work through a similar workflow.
