@@ -121,4 +121,5 @@ Command string: kamel run --dev "c:\test\my.groovy"
 
 ## Next steps
 
+* See about stopping an integration (i.e. `kubectl delete integration <integration id>`) - which focuses on a running pod more than starting a new integration from a file via kamel.
 * Work through installing Camel-k on minishift and see if we can use the VS Code OpenShift tools and work through a similar workflow.
