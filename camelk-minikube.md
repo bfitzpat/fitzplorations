@@ -13,19 +13,43 @@ Once "kamel" and Minikube were installed, I worked through these steps with the 
 1. Execute `./start.sh`
 2. Run `kamel install --cluster-setup`
 3. Run `kamel install`
-4. Run `minikube addons enable registry` (Note registry issue we hit below.)
-5. Run `kubectl get pods --all-namespaces` (to get the id for the camel-k-operator)
-6. Run `kubectl log -f camel-k-operator-676999f5bc-tsgwf` (after get pod name so you can watch the camel log)
-7. Run your route with `kamel run --dev helloworld.groovy`
+4. Run `minikube addons enable registry` (If "registry" pod doesn't show up when you do the next step, note registry issue we hit below with the resolution.)
+5. Run `kubectl get pods --all-namespaces` (to get the id for the camel-k-operator and make sure all pods are running)
+6. Run `kubectl log -f camel-k-operator-[id]` (after get full pod name from "get pods" - it will be something like camel-k-operator-676999f5bc-cfbwc - and this command makes it so you can watch the camel log)
+7. Run your route in another console with `kamel run --dev helloworld.groovy`
 8. Monitor the console and the log to ensure that everything looks good.
 9. To stop your camelk processes, run `minikube stop -p camelk`
 10. You can restart later without running the start.sh script by just using `minikube start -p camelk`
 
 ### Issue enabling registry addon
 
+Update: Looks like this has been fixed upstream for a later version of minikube.
+
 Unfortunately, we hit a problem with the script called to enable the registry. You can find that script [here](https://github.com/kubernetes/minikube/blob/master/deploy/addons/registry/registry-rc.yaml.tmpl#L28). On line 28, true needs to be “true”.
 
 You can fix this locally to get past it. Download the file, make the fix, and then install by running `kubectl -n kube-system create -f my-modified-registry.yaml`
+
+## Minikube + Camel-K in VS Code
+
+The [Kubernetes Tools extension from Microsoft](https://marketplace.visualstudio.com/items?itemName=ms-kubernetes-tools.vscode-kubernetes-tools) offers a number of cool tools we can use with Minikube and Camel-K.
+
+Once the Camel-K pods have started in Minikube, you can see them show up in the Kubernetes Activity view. This removes the need to explicitly do step 5 above:
+
+![Kubernetes Activity with Camel-K](images/kubernetes-view-camelk.jpg)
+
+A cool feature of the Kubernetes view is when you right-click on a pod under the minikube node, you get a pop-up menu that allows you to "Follow Logs"...
+
+![Kubernetes View pop-up menu](images/kubernetes-view-camelk-popup.jpg)
+
+...which opens the log for that pod in a new Terminal window.
+
+![Kubernetes View operator log](images/kubernetes-view-camelk-operator-log.jpg)
+
+With [Language Support for Apache Camel](https://marketplace.visualstudio.com/items?itemName=camel-tooling.vscode-apache-camel) installed, you also get LSP support for Camel XML and Java routes:
+
+![Hello XML](images/kubernetes-view-camelk-hello-xml.jpg)
+
+At this time, you still have to run step 7 from above in a separate Terminal, but I think we can help with that by providing a specialized right-click menu option for running a Kamel service.
 
 ## Other useful links
 
