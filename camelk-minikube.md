@@ -53,6 +53,8 @@ At this time, you still have to run step 7 from above in a separate Terminal, bu
 
 ## Possible VS Code extension to provide 'Run' menu
 
+Note that this extension code is available here: <https://github.com/bfitzpat/vscode-camelk>
+
 If Camel-K (Kamel) is in the system path, we can simply call the 'kamel' utility with appropriate options to run a particular file when the user wishes. For example, if I have a simple workspace with a Groovy file...
 
 ![Run Menu](images/kubernetes-view-camelk-run-menu.jpg)
