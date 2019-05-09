@@ -69,6 +69,7 @@ At this time, you still have to run step 7 from above in a separate Terminal, bu
 ## Changes
 
 * Initial version of this file added [8-MAY-2019]
+* Added images for VS Code components aiding in certain steps (Kubernetes) [9-MAY-2019]
 
 ## Next steps
 
