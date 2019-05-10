@@ -98,6 +98,14 @@ Command string: kamel run --dev "c:\test\my.groovy"
 [1] 2019-05-09 19:46:27.535 INFO  [Camel (camel-k) thread #2 - timer://tick] info - Exchange[ExchangePattern: InOnly, BodyType: String, Body: Hello world from Camel K]
 ```
 
+## Possible extension to provide 'Stop' menu
+
+In addition, Zoran created a new menu to 'Stop' a running integration based on the filename.
+
+![Stop menu](images/kubernetes-view-camelk-stop-menu.jpg)
+
+This menu essentially calls `kamel delete '${filename}'` to stop the running integration.
+
 ## Other useful links
 
 * <https://github.com/apache/camel-k>
@@ -118,8 +126,9 @@ Command string: kamel run --dev "c:\test\my.groovy"
 * Initial version of this file added [8-MAY-2019]
 * Added images for VS Code components aiding in certain steps (Kubernetes) [9-MAY-2019]
 * Added images for possible VS Code extension that provides 'run' menu for certain file types [9-MAY-2019]
+* Zoran created a PR that added a 'Stop Camel-K Integration' menu [10-MAY-2019]
 
 ## Next steps
 
-* See about stopping an integration (i.e. `kubectl delete integration <integration id>`) - which focuses on a running pod more than starting a new integration from a file via kamel.
+* See about getting a list of integrations and providing a view so users can delete them and interact with them in other ways once deployed to minikube.
 * Work through installing Camel-k on minishift and see if we can use the VS Code OpenShift tools and work through a similar workflow.
