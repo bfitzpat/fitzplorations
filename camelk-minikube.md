@@ -106,6 +106,12 @@ In addition, Zoran created a new menu to 'Stop' a running integration based on t
 
 This menu essentially calls `kamel delete '${filename}'` to stop the running integration.
 
+![Camel-K integrations view](images/kubernetes-view-camelk-integrations-and-remove-menu.jpg)
+
+This view provides a list of the "integrations" registered with the current Camel-K context. The view has a "Refresh" button that can be used to manually trigger a refresh of the list, but when you add/remove file-based integrations in the Explorer view, it should refresh automatically.
+
+Also, you can "Remove" integrations from this view to stop a running integration in the system.
+
 ## Other useful links
 
 * <https://github.com/apache/camel-k>
@@ -115,6 +121,9 @@ This menu essentially calls `kamel delete '${filename}'` to stop the running int
 * <https://kubernetes.io/docs/reference/kubectl/cheatsheet/>
 * <https://kubernetes.io/docs/tasks/access-application-cluster/list-all-running-container-images/>
 * <https://kubernetes.io/docs/tasks/tools/install-minikube/>
+* <https://github.com/microsoft/vscode-extension-samples/tree/master/tree-view-sample>
+* <https://code.visualstudio.com/api/extension-guides/tree-view>
+* <https://code.visualstudio.com/api/extension-guides/command>
 
 ## Notes
 
@@ -127,6 +136,7 @@ This menu essentially calls `kamel delete '${filename}'` to stop the running int
 * Added images for VS Code components aiding in certain steps (Kubernetes) [9-MAY-2019]
 * Added images for possible VS Code extension that provides 'run' menu for certain file types [9-MAY-2019]
 * Zoran created a PR that added a 'Stop Camel-K Integration' menu [10-MAY-2019]
+* Added a new "Camel-K Integrations" view that lists the currently running integrations in the system and allows a right-click "Remove" to stop a running integration. Also integrated the Start and Stop actions so the view refreshes accordingly. [10-MAY-2019]
 
 ## Next steps
 
