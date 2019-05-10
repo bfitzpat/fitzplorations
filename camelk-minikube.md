@@ -141,4 +141,5 @@ Also, you can "Remove" integrations from this view to stop a running integration
 ## Next steps
 
 * See about getting a list of integrations and providing a view so users can delete them and interact with them in other ways once deployed to minikube.
+* Explore the new options from the Kubernetes tools team on VS Code (see <https://twitter.com/brendandburns/status/1126694628051247104> which leads you to <https://www.npmjs.com/package/vscode-kubernetes-tools-api> ).
 * Work through installing Camel-k on minishift and see if we can use the VS Code OpenShift tools and work through a similar workflow.
