@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<routes xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns="http://camel.apache.org/schema/spring"
+        xsi:schemaLocation="
+            http://camel.apache.org/schema/spring
+            http://camel.apache.org/schema/spring/camel-spring.xsd">
+
+    <route id="telegram-me-xml">
+        <from uri="telegram:bots/889842995:AAFkUBy4tO5mii6xZli1z_2rLi0_p05Y9ds?chatId=896669017"/>
+        <choice>
+            <when>
+                <simple>${in.body} != null</simple>
+                <to uri="direct:response1"/>
+            </when>
+        </choice>
+    </route>
+
+    <route id="doTheThing">
+        <from uri="direct:response1"/>
+        <log message="Incoming message from Telegram is ${in.body}"/>
+        <setBody>
+            <simple>Why did you say "${in.body}"?</simple>
+        </setBody>
+        <to uri="telegram:bots/889842995:AAFkUBy4tO5mii6xZli1z_2rLi0_p05Y9ds?chatId=896669017"/>
+    </route>
+
+</routes>
